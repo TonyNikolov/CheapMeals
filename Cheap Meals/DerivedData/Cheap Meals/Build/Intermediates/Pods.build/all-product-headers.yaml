@@ -1,0 +1,70 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "GTMDefines.h",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/Pods/GoogleToolboxForMac/GTMDefines.h"
+        },
+        {
+          'type': 'file',
+          'name': "GTMNSData+zlib.h",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/Pods/GoogleToolboxForMac/Foundation/GTMNSData+zlib.h"
+        },
+        {
+          'type': 'file',
+          'name': "GoogleToolboxForMac-Swift.h",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Headers/GoogleToolboxForMac-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "GoogleToolboxForMac-umbrella.h",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/Pods/Target Support Files/GoogleToolboxForMac/GoogleToolboxForMac-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Products/Debug-iphonesimulator/GoogleToolboxForMac/GoogleToolboxForMac.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Intermediates/Pods.build/Debug-iphonesimulator/GoogleToolboxForMac.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Products/Debug-iphonesimulator/Pods_Cheap_Meals.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-Cheap Meals-umbrella.h",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/Pods/Target Support Files/Pods-Cheap Meals/Pods-Cheap Meals-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_Cheap_Meals-Swift.h",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Products/Debug-iphonesimulator/Pods_Cheap_Meals.framework/Headers/Pods_Cheap_Meals-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Products/Debug-iphonesimulator/Pods_Cheap_Meals.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/dnt/Desktop/IOSDev/Cheap Meals/DerivedData/Cheap Meals/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-Cheap Meals.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

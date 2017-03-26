@@ -1,0 +1,6 @@
+framework module Pods_Cheap_MealsUITests {
+  umbrella header "Pods-Cheap MealsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

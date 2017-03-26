@@ -1,0 +1,779 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41E221602A1480EE4406C090 /* Pods_Cheap_Meals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7C17F0BB77FEFCC51A60A2 /* Pods_Cheap_Meals.framework */; };
+		8AF93481C374EA72629E0410 /* Pods_Cheap_MealsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6E4BB03CECCFB2656C61BA /* Pods_Cheap_MealsTests.framework */; };
+		D3F4AD1895F5C3F9F88DC7D9 /* Pods_Cheap_MealsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE12525041144771B3858E9 /* Pods_Cheap_MealsUITests.framework */; };
+		EE07DA741E870B3000A2FABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA731E870B3000A2FABF /* AppDelegate.swift */; };
+		EE07DA761E870B3000A2FABF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA751E870B3000A2FABF /* ViewController.swift */; };
+		EE07DA791E870B3000A2FABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE07DA771E870B3000A2FABF /* Main.storyboard */; };
+		EE07DA7C1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA7A1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld */; };
+		EE07DA7E1E870B3000A2FABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE07DA7D1E870B3000A2FABF /* Assets.xcassets */; };
+		EE07DA811E870B3000A2FABF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE07DA7F1E870B3000A2FABF /* LaunchScreen.storyboard */; };
+		EE07DA8C1E870B3000A2FABF /* Cheap_MealsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA8B1E870B3000A2FABF /* Cheap_MealsTests.swift */; };
+		EE07DA971E870B3000A2FABF /* Cheap_MealsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA961E870B3000A2FABF /* Cheap_MealsUITests.swift */; };
+		EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DAA51E87119400A2FABF /* LoginController.swift */; };
+		EE51A08B1E87BA6A008DC7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */; };
+		EEAAD1301E883F5200388E83 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD12F1E883F5200388E83 /* Data.swift */; };
+		EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1311E883FAF00388E83 /* DataProtocol.swift */; };
+		EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1331E88438100388E83 /* DataDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE07DA881E870B3000A2FABF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE07DA681E870B3000A2FABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE07DA6F1E870B3000A2FABF;
+			remoteInfo = "Cheap Meals";
+		};
+		EE07DA931E870B3000A2FABF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE07DA681E870B3000A2FABF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE07DA6F1E870B3000A2FABF;
+			remoteInfo = "Cheap Meals";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		25E95887DC3A7388205CFA89 /* Pods-Cheap MealsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap MealsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap MealsUITests/Pods-Cheap MealsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		285A4B987A19DC759DD7D971 /* Pods-Cheap Meals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap Meals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap Meals/Pods-Cheap Meals.debug.xcconfig"; sourceTree = "<group>"; };
+		5817F7BDA5C0CE0A22D3B73E /* Pods-Cheap MealsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap MealsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap MealsTests/Pods-Cheap MealsTests.release.xcconfig"; sourceTree = "<group>"; };
+		600CA5E0CA1750580761C6B3 /* Pods-Cheap Meals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap Meals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap Meals/Pods-Cheap Meals.release.xcconfig"; sourceTree = "<group>"; };
+		6BE12525041144771B3858E9 /* Pods_Cheap_MealsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheap_MealsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78FBB1EE6DDABE07BEE7D3AB /* Pods-Cheap MealsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap MealsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap MealsTests/Pods-Cheap MealsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D6E4BB03CECCFB2656C61BA /* Pods_Cheap_MealsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheap_MealsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F7C17F0BB77FEFCC51A60A2 /* Pods_Cheap_Meals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheap_Meals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE07DA701E870B3000A2FABF /* Cheap Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheap Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE07DA731E870B3000A2FABF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE07DA751E870B3000A2FABF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE07DA781E870B3000A2FABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE07DA7B1E870B3000A2FABF /* Cheap_Meals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheap_Meals.xcdatamodel; sourceTree = "<group>"; };
+		EE07DA7D1E870B3000A2FABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE07DA801E870B3000A2FABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE07DA821E870B3000A2FABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE07DA871E870B3000A2FABF /* Cheap MealsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cheap MealsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE07DA8B1E870B3000A2FABF /* Cheap_MealsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheap_MealsTests.swift; sourceTree = "<group>"; };
+		EE07DA8D1E870B3000A2FABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE07DA921E870B3000A2FABF /* Cheap MealsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Cheap MealsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE07DA961E870B3000A2FABF /* Cheap_MealsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheap_MealsUITests.swift; sourceTree = "<group>"; };
+		EE07DA981E870B3000A2FABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE07DAA51E87119400A2FABF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEAAD12F1E883F5200388E83 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		EEAAD1311E883FAF00388E83 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
+		EEAAD1331E88438100388E83 /* DataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
+		F3179D272B848E8C7975EEF2 /* Pods-Cheap MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap MealsUITests/Pods-Cheap MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE07DA6D1E870B3000A2FABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41E221602A1480EE4406C090 /* Pods_Cheap_Meals.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE07DA841E870B3000A2FABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF93481C374EA72629E0410 /* Pods_Cheap_MealsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE07DA8F1E870B3000A2FABF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3F4AD1895F5C3F9F88DC7D9 /* Pods_Cheap_MealsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5C3E73B14788647F19D0A62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				285A4B987A19DC759DD7D971 /* Pods-Cheap Meals.debug.xcconfig */,
+				600CA5E0CA1750580761C6B3 /* Pods-Cheap Meals.release.xcconfig */,
+				78FBB1EE6DDABE07BEE7D3AB /* Pods-Cheap MealsTests.debug.xcconfig */,
+				5817F7BDA5C0CE0A22D3B73E /* Pods-Cheap MealsTests.release.xcconfig */,
+				25E95887DC3A7388205CFA89 /* Pods-Cheap MealsUITests.debug.xcconfig */,
+				F3179D272B848E8C7975EEF2 /* Pods-Cheap MealsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EE07DA671E870B3000A2FABF = {
+			isa = PBXGroup;
+			children = (
+				EE07DA721E870B3000A2FABF /* Cheap Meals */,
+				EE07DA8A1E870B3000A2FABF /* Cheap MealsTests */,
+				EE07DA951E870B3000A2FABF /* Cheap MealsUITests */,
+				EE07DA711E870B3000A2FABF /* Products */,
+				D5C3E73B14788647F19D0A62 /* Pods */,
+				FEFC7B170137BF2D35070E1F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EE07DA711E870B3000A2FABF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE07DA701E870B3000A2FABF /* Cheap Meals.app */,
+				EE07DA871E870B3000A2FABF /* Cheap MealsTests.xctest */,
+				EE07DA921E870B3000A2FABF /* Cheap MealsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE07DA721E870B3000A2FABF /* Cheap Meals */ = {
+			isa = PBXGroup;
+			children = (
+				EEAAD12E1E883F3100388E83 /* Data */,
+				EE07DAA41E87116800A2FABF /* Controllers */,
+				EE07DA731E870B3000A2FABF /* AppDelegate.swift */,
+				EE07DA771E870B3000A2FABF /* Main.storyboard */,
+				EE07DA7D1E870B3000A2FABF /* Assets.xcassets */,
+				EE07DA7F1E870B3000A2FABF /* LaunchScreen.storyboard */,
+				EE07DA821E870B3000A2FABF /* Info.plist */,
+				EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */,
+				EE07DA7A1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld */,
+			);
+			path = "Cheap Meals";
+			sourceTree = "<group>";
+		};
+		EE07DA8A1E870B3000A2FABF /* Cheap MealsTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE07DA8B1E870B3000A2FABF /* Cheap_MealsTests.swift */,
+				EE07DA8D1E870B3000A2FABF /* Info.plist */,
+			);
+			path = "Cheap MealsTests";
+			sourceTree = "<group>";
+		};
+		EE07DA951E870B3000A2FABF /* Cheap MealsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE07DA961E870B3000A2FABF /* Cheap_MealsUITests.swift */,
+				EE07DA981E870B3000A2FABF /* Info.plist */,
+			);
+			path = "Cheap MealsUITests";
+			sourceTree = "<group>";
+		};
+		EE07DAA41E87116800A2FABF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE07DAA51E87119400A2FABF /* LoginController.swift */,
+				EE07DA751E870B3000A2FABF /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EEAAD12E1E883F3100388E83 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				EEAAD12F1E883F5200388E83 /* Data.swift */,
+				EEAAD1311E883FAF00388E83 /* DataProtocol.swift */,
+				EEAAD1331E88438100388E83 /* DataDelegate.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		FEFC7B170137BF2D35070E1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F7C17F0BB77FEFCC51A60A2 /* Pods_Cheap_Meals.framework */,
+				9D6E4BB03CECCFB2656C61BA /* Pods_Cheap_MealsTests.framework */,
+				6BE12525041144771B3858E9 /* Pods_Cheap_MealsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE07DA6F1E870B3000A2FABF /* Cheap Meals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE07DA9B1E870B3000A2FABF /* Build configuration list for PBXNativeTarget "Cheap Meals" */;
+			buildPhases = (
+				B117573D2C95BC39507C8918 /* [CP] Check Pods Manifest.lock */,
+				EE07DA6C1E870B3000A2FABF /* Sources */,
+				EE07DA6D1E870B3000A2FABF /* Frameworks */,
+				EE07DA6E1E870B3000A2FABF /* Resources */,
+				02ADE5C248B52354E31359FA /* [CP] Embed Pods Frameworks */,
+				EC0219F53BCCC00612AB866E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Cheap Meals";
+			productName = "Cheap Meals";
+			productReference = EE07DA701E870B3000A2FABF /* Cheap Meals.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EE07DA861E870B3000A2FABF /* Cheap MealsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE07DA9E1E870B3000A2FABF /* Build configuration list for PBXNativeTarget "Cheap MealsTests" */;
+			buildPhases = (
+				4853A7778B194944451BBE4C /* [CP] Check Pods Manifest.lock */,
+				EE07DA831E870B3000A2FABF /* Sources */,
+				EE07DA841E870B3000A2FABF /* Frameworks */,
+				EE07DA851E870B3000A2FABF /* Resources */,
+				BC7F46530F48B5886D9D0213 /* [CP] Embed Pods Frameworks */,
+				B560EF1B83967ED5F73308A8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE07DA891E870B3000A2FABF /* PBXTargetDependency */,
+			);
+			name = "Cheap MealsTests";
+			productName = "Cheap MealsTests";
+			productReference = EE07DA871E870B3000A2FABF /* Cheap MealsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EE07DA911E870B3000A2FABF /* Cheap MealsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE07DAA11E870B3000A2FABF /* Build configuration list for PBXNativeTarget "Cheap MealsUITests" */;
+			buildPhases = (
+				7839D8C6F99B97CDA8A7FC9D /* [CP] Check Pods Manifest.lock */,
+				EE07DA8E1E870B3000A2FABF /* Sources */,
+				EE07DA8F1E870B3000A2FABF /* Frameworks */,
+				EE07DA901E870B3000A2FABF /* Resources */,
+				B530F86B9BF68E1142C026D4 /* [CP] Embed Pods Frameworks */,
+				C1B94262E077D2DEAB0DC27E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE07DA941E870B3000A2FABF /* PBXTargetDependency */,
+			);
+			name = "Cheap MealsUITests";
+			productName = "Cheap MealsUITests";
+			productReference = EE07DA921E870B3000A2FABF /* Cheap MealsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE07DA681E870B3000A2FABF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Tony Nikolov";
+				TargetAttributes = {
+					EE07DA6F1E870B3000A2FABF = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
+					EE07DA861E870B3000A2FABF = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EE07DA6F1E870B3000A2FABF;
+					};
+					EE07DA911E870B3000A2FABF = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = EE07DA6F1E870B3000A2FABF;
+					};
+				};
+			};
+			buildConfigurationList = EE07DA6B1E870B3000A2FABF /* Build configuration list for PBXProject "Cheap Meals" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE07DA671E870B3000A2FABF;
+			productRefGroup = EE07DA711E870B3000A2FABF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE07DA6F1E870B3000A2FABF /* Cheap Meals */,
+				EE07DA861E870B3000A2FABF /* Cheap MealsTests */,
+				EE07DA911E870B3000A2FABF /* Cheap MealsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE07DA6E1E870B3000A2FABF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE07DA811E870B3000A2FABF /* LaunchScreen.storyboard in Resources */,
+				EE51A08B1E87BA6A008DC7E4 /* GoogleService-Info.plist in Resources */,
+				EE07DA7E1E870B3000A2FABF /* Assets.xcassets in Resources */,
+				EE07DA791E870B3000A2FABF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE07DA851E870B3000A2FABF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE07DA901E870B3000A2FABF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02ADE5C248B52354E31359FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cheap Meals/Pods-Cheap Meals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4853A7778B194944451BBE4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7839D8C6F99B97CDA8A7FC9D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B117573D2C95BC39507C8918 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B530F86B9BF68E1142C026D4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cheap MealsUITests/Pods-Cheap MealsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B560EF1B83967ED5F73308A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cheap MealsTests/Pods-Cheap MealsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC7F46530F48B5886D9D0213 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cheap MealsTests/Pods-Cheap MealsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1B94262E077D2DEAB0DC27E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cheap MealsUITests/Pods-Cheap MealsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC0219F53BCCC00612AB866E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cheap Meals/Pods-Cheap Meals-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE07DA6C1E870B3000A2FABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEAAD1301E883F5200388E83 /* Data.swift in Sources */,
+				EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */,
+				EE07DA761E870B3000A2FABF /* ViewController.swift in Sources */,
+				EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */,
+				EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */,
+				EE07DA741E870B3000A2FABF /* AppDelegate.swift in Sources */,
+				EE07DA7C1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE07DA831E870B3000A2FABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE07DA8C1E870B3000A2FABF /* Cheap_MealsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE07DA8E1E870B3000A2FABF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE07DA971E870B3000A2FABF /* Cheap_MealsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE07DA891E870B3000A2FABF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE07DA6F1E870B3000A2FABF /* Cheap Meals */;
+			targetProxy = EE07DA881E870B3000A2FABF /* PBXContainerItemProxy */;
+		};
+		EE07DA941E870B3000A2FABF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE07DA6F1E870B3000A2FABF /* Cheap Meals */;
+			targetProxy = EE07DA931E870B3000A2FABF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EE07DA771E870B3000A2FABF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE07DA781E870B3000A2FABF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE07DA7F1E870B3000A2FABF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE07DA801E870B3000A2FABF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE07DA991E870B3000A2FABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE07DA9A1E870B3000A2FABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE07DA9C1E870B3000A2FABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 285A4B987A19DC759DD7D971 /* Pods-Cheap Meals.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cheap Meals/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dnt.Cheap-Meals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EE07DA9D1E870B3000A2FABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 600CA5E0CA1750580761C6B3 /* Pods-Cheap Meals.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Cheap Meals/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dnt.Cheap-Meals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		EE07DA9F1E870B3000A2FABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78FBB1EE6DDABE07BEE7D3AB /* Pods-Cheap MealsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Cheap MealsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dnt.Cheap-MealsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cheap Meals.app/Cheap Meals";
+			};
+			name = Debug;
+		};
+		EE07DAA01E870B3000A2FABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5817F7BDA5C0CE0A22D3B73E /* Pods-Cheap MealsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Cheap MealsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dnt.Cheap-MealsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cheap Meals.app/Cheap Meals";
+			};
+			name = Release;
+		};
+		EE07DAA21E870B3000A2FABF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25E95887DC3A7388205CFA89 /* Pods-Cheap MealsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Cheap MealsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dnt.Cheap-MealsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Cheap Meals";
+			};
+			name = Debug;
+		};
+		EE07DAA31E870B3000A2FABF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3179D272B848E8C7975EEF2 /* Pods-Cheap MealsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "Cheap MealsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dnt.Cheap-MealsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Cheap Meals";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE07DA6B1E870B3000A2FABF /* Build configuration list for PBXProject "Cheap Meals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE07DA991E870B3000A2FABF /* Debug */,
+				EE07DA9A1E870B3000A2FABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE07DA9B1E870B3000A2FABF /* Build configuration list for PBXNativeTarget "Cheap Meals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE07DA9C1E870B3000A2FABF /* Debug */,
+				EE07DA9D1E870B3000A2FABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE07DA9E1E870B3000A2FABF /* Build configuration list for PBXNativeTarget "Cheap MealsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE07DA9F1E870B3000A2FABF /* Debug */,
+				EE07DAA01E870B3000A2FABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE07DAA11E870B3000A2FABF /* Build configuration list for PBXNativeTarget "Cheap MealsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE07DAA21E870B3000A2FABF /* Debug */,
+				EE07DAA31E870B3000A2FABF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EE07DA7A1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EE07DA7B1E870B3000A2FABF /* Cheap_Meals.xcdatamodel */,
+			);
+			currentVersion = EE07DA7B1E870B3000A2FABF /* Cheap_Meals.xcdatamodel */;
+			path = Cheap_Meals.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EE07DA681E870B3000A2FABF /* Project object */;
+}
