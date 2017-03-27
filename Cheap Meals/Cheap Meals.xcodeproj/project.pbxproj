@@ -11,7 +11,7 @@
 		8AF93481C374EA72629E0410 /* Pods_Cheap_MealsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6E4BB03CECCFB2656C61BA /* Pods_Cheap_MealsTests.framework */; };
 		D3F4AD1895F5C3F9F88DC7D9 /* Pods_Cheap_MealsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BE12525041144771B3858E9 /* Pods_Cheap_MealsUITests.framework */; };
 		EE07DA741E870B3000A2FABF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA731E870B3000A2FABF /* AppDelegate.swift */; };
-		EE07DA761E870B3000A2FABF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA751E870B3000A2FABF /* ViewController.swift */; };
+		EE07DA761E870B3000A2FABF /* FeaturedMealsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */; };
 		EE07DA791E870B3000A2FABF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE07DA771E870B3000A2FABF /* Main.storyboard */; };
 		EE07DA7C1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA7A1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld */; };
 		EE07DA7E1E870B3000A2FABF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE07DA7D1E870B3000A2FABF /* Assets.xcassets */; };
@@ -20,6 +20,9 @@
 		EE07DA971E870B3000A2FABF /* Cheap_MealsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA961E870B3000A2FABF /* Cheap_MealsUITests.swift */; };
 		EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DAA51E87119400A2FABF /* LoginController.swift */; };
 		EE51A08B1E87BA6A008DC7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */; };
+		EE9307601E897864006232AB /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93075F1E897864006232AB /* RestaurantCell.swift */; };
+		EE9307621E898145006232AB /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9307611E898145006232AB /* MealCell.swift */; };
+		EE9307641E89A817006232AB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9307631E89A817006232AB /* Models.swift */; };
 		EEAAD1301E883F5200388E83 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD12F1E883F5200388E83 /* Data.swift */; };
 		EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1311E883FAF00388E83 /* DataProtocol.swift */; };
 		EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1331E88438100388E83 /* DataDelegate.swift */; };
@@ -53,7 +56,7 @@
 		9F7C17F0BB77FEFCC51A60A2 /* Pods_Cheap_Meals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cheap_Meals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE07DA701E870B3000A2FABF /* Cheap Meals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheap Meals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE07DA731E870B3000A2FABF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE07DA751E870B3000A2FABF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedMealsController.swift; sourceTree = "<group>"; };
 		EE07DA781E870B3000A2FABF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE07DA7B1E870B3000A2FABF /* Cheap_Meals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheap_Meals.xcdatamodel; sourceTree = "<group>"; };
 		EE07DA7D1E870B3000A2FABF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +70,9 @@
 		EE07DA981E870B3000A2FABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE07DAA51E87119400A2FABF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE93075F1E897864006232AB /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
+		EE9307611E898145006232AB /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
+		EE9307631E89A817006232AB /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		EEAAD12F1E883F5200388E83 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		EEAAD1311E883FAF00388E83 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
 		EEAAD1331E88438100388E83 /* DataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		EE07DA721E870B3000A2FABF /* Cheap Meals */ = {
 			isa = PBXGroup;
 			children = (
+				EE9307651E89A9AA006232AB /* Models */,
 				EEAAD12E1E883F3100388E83 /* Data */,
 				EE07DAA41E87116800A2FABF /* Controllers */,
 				EE07DA731E870B3000A2FABF /* AppDelegate.swift */,
@@ -173,10 +180,28 @@
 		EE07DAA41E87116800A2FABF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE9307661E89A9B9006232AB /* Views */,
 				EE07DAA51E87119400A2FABF /* LoginController.swift */,
-				EE07DA751E870B3000A2FABF /* ViewController.swift */,
+				EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EE9307651E89A9AA006232AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE9307631E89A817006232AB /* Models.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EE9307661E89A9B9006232AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE9307611E898145006232AB /* MealCell.swift */,
+				EE93075F1E897864006232AB /* RestaurantCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		EEAAD12E1E883F3100388E83 /* Data */ = {
@@ -481,13 +506,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE9307601E897864006232AB /* RestaurantCell.swift in Sources */,
 				EEAAD1301E883F5200388E83 /* Data.swift in Sources */,
 				EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */,
-				EE07DA761E870B3000A2FABF /* ViewController.swift in Sources */,
+				EE9307621E898145006232AB /* MealCell.swift in Sources */,
+				EE07DA761E870B3000A2FABF /* FeaturedMealsController.swift in Sources */,
 				EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */,
 				EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */,
 				EE07DA741E870B3000A2FABF /* AppDelegate.swift in Sources */,
 				EE07DA7C1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld in Sources */,
+				EE9307641E89A817006232AB /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

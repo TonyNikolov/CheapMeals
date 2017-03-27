@@ -21,8 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.data = Data()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        let layout = UICollectionViewFlowLayout()
+        let featuedMealsController = FeaturedMealsController(collectionViewLayout:layout)
+        window?.rootViewController = UINavigationController(rootViewController: featuedMealsController)
         
         return true
     }

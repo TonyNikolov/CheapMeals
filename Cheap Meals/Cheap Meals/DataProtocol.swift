@@ -9,6 +9,7 @@
 import Foundation
 
 protocol DataProtocol {
+    func isUserLoggedIn() -> Bool
     func userLogin(withEmail email: String, andPassword password: String)
     func userLogout()
     func userRegister(withEmail email: String, andPassword password: String, andDisplayName name: String)

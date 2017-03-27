@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
-import FirebaseAuth
 
 class LoginController: UIViewController, DataDelegate {
     let inputContainerView: UIView = {
@@ -93,15 +90,25 @@ class LoginController: UIViewController, DataDelegate {
         return sc
     }()
     
+    let	profileImageView: UIImageView = {
+       let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(r: 218, g: 80, b: 84)
         view.addSubview(inputContainerView)
         view.addSubview(loginRegisternButton)
         view.addSubview(loginRegisterSegmentedControl)
+        view.addSubview(profileImageView)
         setupInputContainerView()
         setupLoginRegisterButton()
         setupLoginRegisterSegmentedControl()
+        setupProfileImageView()
     }
     
     
@@ -212,6 +219,13 @@ class LoginController: UIViewController, DataDelegate {
         passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/3)
         passwordTextFieldHeightAnchor?.isActive=true
         
+    }
+    
+    func setupProfileImageView(){
+        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -12).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
     }
     
     func setupLoginRegisterButton(){

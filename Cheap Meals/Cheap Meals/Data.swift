@@ -29,7 +29,11 @@ class Data: DataProtocol {
     }
     
     func userLogout(){
-        
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
     }
     
     func userRegister(withEmail email: String, andPassword password: String, andDisplayName name: String){
@@ -54,6 +58,14 @@ class Data: DataProtocol {
             })
         })
 
+    }
+    
+    func isUserLoggedIn() -> Bool {
+        if FIRAuth.auth()?.currentUser?.uid == nil {
+            return false
+        }
+        
+        return true
     }
     
 }
