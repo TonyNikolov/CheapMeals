@@ -20,12 +20,18 @@ extension AddMealController: UIImagePickerControllerDelegate, UINavigationContro
     
     
     func handleCamera(){
-        print("camera")
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        present(picker,animated: true, completion: nil)
+
     }
     
     func handleGallery(){
         let picker = UIImagePickerController()
         picker.delegate = self
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
         picker.allowsEditing = true
         present(picker,animated: true, completion: nil)
         

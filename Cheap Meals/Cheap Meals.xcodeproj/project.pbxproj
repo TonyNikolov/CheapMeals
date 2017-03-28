@@ -29,6 +29,7 @@
 		EEAAD1301E883F5200388E83 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD12F1E883F5200388E83 /* Data.swift */; };
 		EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1311E883FAF00388E83 /* DataProtocol.swift */; };
 		EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1331E88438100388E83 /* DataDelegate.swift */; };
+		EEAFFE311E8B0A6800C58BDD /* RestaurantProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		EEAAD12F1E883F5200388E83 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		EEAAD1311E883FAF00388E83 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
 		EEAAD1331E88438100388E83 /* DataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
+		EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileController.swift; sourceTree = "<group>"; };
 		F3179D272B848E8C7975EEF2 /* Pods-Cheap MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap MealsUITests/Pods-Cheap MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,12 +188,14 @@
 		EE07DAA41E87116800A2FABF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EEAFFE2F1E8B0A5100C58BDD /* New Group */,
 				EE9307661E89A9B9006232AB /* Views */,
 				EE07DAA51E87119400A2FABF /* LoginController.swift */,
 				EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */,
 				EE33A8A31E8A78FB00FA6DA7 /* LoginController+Handlers.swift */,
 				EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */,
 				EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */,
+				EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +225,13 @@
 				EEAAD1331E88438100388E83 /* DataDelegate.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		EEAFFE2F1E8B0A5100C58BDD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		FEFC7B170137BF2D35070E1F /* Frameworks */ = {
@@ -525,6 +536,7 @@
 				EE33A8A81E8AC6B700FA6DA7 /* AddMealController+Handlers.swift in Sources */,
 				EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */,
 				EE07DA741E870B3000A2FABF /* AppDelegate.swift in Sources */,
+				EEAFFE311E8B0A6800C58BDD /* RestaurantProfileController.swift in Sources */,
 				EE07DA7C1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld in Sources */,
 				EE33A8A61E8ABD2A00FA6DA7 /* AddMealController.swift in Sources */,
 				EE9307641E89A817006232AB /* Models.swift in Sources */,

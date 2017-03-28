@@ -8,12 +8,12 @@
 
 import UIKit
 
-class AddMealController: UIViewController, DataDelegate {
+class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(r: 218, g: 80, b: 84)
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action:#selector(onBackTapped))
-        
+        shortDescriptionTextField.delegate = self
         view.addSubview(inputContainerView)
         view.addSubview(publishMealButton)
         view.addSubview(galleryCameraSegmentedControl)
@@ -50,7 +50,7 @@ class AddMealController: UIViewController, DataDelegate {
         button.layer.borderWidth = 1
         button.layer.masksToBounds = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        
+        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handlePublishTapped)))
         
         return button
     }()
@@ -90,7 +90,15 @@ class AddMealController: UIViewController, DataDelegate {
         let tf = UITextField()
         tf.placeholder = "Weight in grams"
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.isSecureTextEntry = true
+        return tf
+    }()
+    
+    let shortDescriptionTextField: UITextView = {
+        let tf = UITextView()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.text = "Short description"
+        tf.font = UIFont.systemFont(ofSize: 17)
+        tf.textColor = UIColor.lightGray
         return tf
     }()
     
@@ -113,6 +121,17 @@ class AddMealController: UIViewController, DataDelegate {
         return imageView
     }()
     
+    func handlePublishTapped(){
+        
+    }
+    
+    func collectInputData(){
+        
+    }
+    
+    func constructMealObject(){
+        
+    }
     
     func setupGalleryCamereSegmentedControl(){
         galleryCameraSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -135,13 +154,13 @@ class AddMealController: UIViewController, DataDelegate {
     var nameTextFieldHeightAnchor: NSLayoutConstraint?
     var priceTextFieldHeightAnchor: NSLayoutConstraint?
     var weigthTextFieldHeightAnchor: NSLayoutConstraint?
-
+    var shortDescriptionTextFieldHeightAnchor: NSLayoutConstraint?
     
     func setupInputContainerView(){
         inputContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         inputContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         inputContainerView.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -24).isActive = true
-        inputsContainerViewHeigthAnchor = inputContainerView.heightAnchor.constraint(equalToConstant: 150)
+        inputsContainerViewHeigthAnchor = inputContainerView.heightAnchor.constraint(equalToConstant: 200)
         inputsContainerViewHeigthAnchor?.isActive = true
         
         inputContainerView.addSubview(nameTextField)
@@ -149,11 +168,12 @@ class AddMealController: UIViewController, DataDelegate {
         inputContainerView.addSubview(priceTextField)
         inputContainerView.addSubview(priceSeparator)
         inputContainerView.addSubview(weigthTextField)
+        inputContainerView.addSubview(shortDescriptionTextField)
         
         nameTextField.leftAnchor.constraint(equalTo: inputContainerView.leftAnchor, constant: 12).isActive = true
         nameTextField.topAnchor.constraint(equalTo: inputContainerView.topAnchor).isActive=true
         nameTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive=true
-        nameTextFieldHeightAnchor = nameTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/3)
+        nameTextFieldHeightAnchor = nameTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/4)
         nameTextFieldHeightAnchor?.isActive=true
         
         nameSeparator.leftAnchor.constraint(equalTo: inputContainerView.leftAnchor).isActive = true
@@ -163,8 +183,8 @@ class AddMealController: UIViewController, DataDelegate {
         
         priceTextField.leftAnchor.constraint(equalTo: inputContainerView.leftAnchor, constant: 12).isActive = true
         priceTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor).isActive=true
-        priceTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive=true
-        priceTextFieldHeightAnchor = priceTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/3)
+        priceTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor, multiplier: 1/2).isActive=true
+        priceTextFieldHeightAnchor = priceTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/4)
         priceTextFieldHeightAnchor?.isActive=true
         
         priceSeparator.leftAnchor.constraint(equalTo: inputContainerView.leftAnchor).isActive = true
@@ -172,11 +192,18 @@ class AddMealController: UIViewController, DataDelegate {
         priceSeparator.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive = true
         priceSeparator.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
-        weigthTextField.leftAnchor.constraint(equalTo: inputContainerView.leftAnchor, constant: 12).isActive = true
-        weigthTextField.topAnchor.constraint(equalTo: priceTextField.bottomAnchor).isActive=true
-        weigthTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive=true
-        weigthTextFieldHeightAnchor = weigthTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/3)
+        weigthTextField.rightAnchor.constraint(equalTo: inputContainerView.rightAnchor, constant: 12).isActive = true
+        weigthTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor).isActive=true
+        weigthTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor, multiplier: 1/2).isActive=true
+        weigthTextFieldHeightAnchor = weigthTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 1/4)
         weigthTextFieldHeightAnchor?.isActive=true
+        
+        shortDescriptionTextField.leftAnchor.constraint(equalTo: inputContainerView.leftAnchor, constant: 12).isActive = true
+        shortDescriptionTextField.topAnchor.constraint(equalTo: priceSeparator.bottomAnchor).isActive=true
+        shortDescriptionTextField.widthAnchor.constraint(equalTo: inputContainerView.widthAnchor).isActive=true
+        shortDescriptionTextFieldHeightAnchor = shortDescriptionTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: 2/4)
+        shortDescriptionTextFieldHeightAnchor?.isActive=true
+        
         
     }
 
@@ -185,6 +212,21 @@ class AddMealController: UIViewController, DataDelegate {
         mealImageView.bottomAnchor.constraint(equalTo: galleryCameraSegmentedControl.topAnchor, constant: -12).isActive = true
         mealImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         mealImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if textView.text.isEmpty {
+            textView.text = "Short description"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
     }
     
 }

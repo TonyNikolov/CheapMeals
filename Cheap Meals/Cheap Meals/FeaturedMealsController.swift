@@ -19,10 +19,11 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         data?.getRestaurants()
         restaurants = Restaurant.dummyData()
         
+        
         collectionView?.backgroundColor = UIColor(r: 219, g: 80, b: 84)
         collectionView?.register(RestaurantCell.self, forCellWithReuseIdentifier: cellId )
         let logout = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
-        let profile = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: nil)
+        let profile = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(handleEditTapped))
         let discover = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: nil)
         let add = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(handleAddTapped))
         navigationItem.rightBarButtonItems = [add,discover]
@@ -44,6 +45,11 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
     func handleAddTapped(){
         let addMealController = AddMealController()
         present(UINavigationController(rootViewController: addMealController), animated: true, completion: nil)
+    }
+    
+    func handleEditTapped(){
+        let restaurantProfileController = RestaurantProfileController()
+        present(UINavigationController(rootViewController: restaurantProfileController), animated: true, completion: nil)
     }
     
     func handleLogout(){

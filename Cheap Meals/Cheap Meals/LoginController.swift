@@ -92,7 +92,7 @@ class LoginController: UIViewController, DataDelegate {
     
     //needs to be lazy var so it can access "self"
     lazy var profileImageView: UIImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -101,9 +101,26 @@ class LoginController: UIViewController, DataDelegate {
         return imageView
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(r: 218, g: 80, b: 84)
+        
+        func startActivityIndicatorView() -> UIActivityIndicatorView {
+            
+            let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+            activityView.frame = CGRect(x: 200, y: 120, width: 200, height: 200)
+            activityView.center = CGPoint(x: 100, y: 100)
+            activityView.color = .blue
+            activityView.startAnimating()
+            self.view.addSubview(activityView)
+            
+            return activityView
+        }
+        
+        startActivityIndicatorView()
+
+ 
         view.addSubview(inputContainerView)
         view.addSubview(loginRegisternButton)
         view.addSubview(loginRegisterSegmentedControl)
