@@ -6,7 +6,7 @@
 //  Copyright © 2017 Tony Nikolov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
@@ -14,6 +14,14 @@ import FirebaseStorage
 class Data: DataProtocol {
     
     var delegate: DataDelegate?
+    
+    func getRestaurants() {
+        let ref = FIRDatabase.database().reference().child("restaurants")
+        ref.observe(.value, with: { snapshot in
+            print(snapshot.value!)
+        })
+        
+    }
     
     func userLogin(withEmail email: String, andPassword password: String){
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
@@ -25,7 +33,7 @@ class Data: DataProtocol {
             }
             
         })
-
+        
     }
     
     func userLogout(){
@@ -34,6 +42,47 @@ class Data: DataProtocol {
         } catch let logoutError {
             print(logoutError)
         }
+    }
+    
+    func userRegister(withEmail email: String, andPassword password: String, andDisplayName name: String, andProfileImage image: UIImage){
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
+            if error != nil{
+                print(error!)
+            }
+            
+            guard (user?.uid) != nil else {
+                return
+            }
+            let imageName = NSUUID().uuidString
+            let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
+            if let uploadData = UIImagePNGRepresentation(image) {
+                storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil{
+                        print(error!)
+                        return
+                    }
+                    if let imgeUrl = metadata?.downloadURL()?.absoluteString {
+                    let values = ["name": name, "email": email, "profileImageUrl": imgeUrl]
+                    self.registerUserIntoDb(uid: (user?.uid)!, values: values as [String : AnyObject])
+                    }
+                })
+            }
+            
+            
+        })
+        
+    }
+    
+    private func registerUserIntoDb(uid: String, values: [String: AnyObject]){
+        let dbRef = FIRDatabase.database().reference().child("restaurants").child(uid)
+        dbRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
+            if error != nil{
+                print(error!)
+            } else{
+                weak var weakSelf = self
+                weakSelf?.delegate?.onSuccessRegister()
+            }
+        })
     }
     
     func userRegister(withEmail email: String, andPassword password: String, andDisplayName name: String){
@@ -45,10 +94,9 @@ class Data: DataProtocol {
             guard (user?.uid) != nil else {
                 return
             }
-            
-            let ref = FIRDatabase.database().reference().child("restaurants").child((user?.uid)!)
+            let dbRef = FIRDatabase.database().reference().child("restaurants").child((user?.uid)!)
             let values = ["name": name, "email": email]
-            ref.updateChildValues(values, withCompletionBlock: { (error, ref) in
+            dbRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
                 if error != nil{
                     print(error!)
                 } else{
@@ -57,7 +105,7 @@ class Data: DataProtocol {
                 }
             })
         })
-
+        
     }
     
     func isUserLoggedIn() -> Bool {

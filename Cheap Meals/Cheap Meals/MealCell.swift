@@ -29,12 +29,16 @@ class MealCell: UICollectionViewCell {
             } else{
                 priceLabel.text = "Free"
             }
+            
+            if let imageName = meal?.imageName {
+                imageView.image = UIImage(named: imageName)
+            }
         }
     }
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "dummyImage2")
+   //     imageView.image = UIImage(named: "dummyImage2")
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 12
         imageView.layer.masksToBounds = true

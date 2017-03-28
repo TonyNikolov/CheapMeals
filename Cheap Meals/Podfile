@@ -7,9 +7,9 @@ target 'Cheap Meals' do
 
   # Pods for Cheap Meals
     pod 'Firebase/Core'
-    pod 'Firebase/Auth’
-    pod 'Firebase/Storage’
-    pod 'Firebase/Database’
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Database'
   
 target 'Cheap MealsTests' do
     inherit! :search_paths

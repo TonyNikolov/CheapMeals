@@ -90,11 +90,14 @@ class LoginController: UIViewController, DataDelegate {
         return sc
     }()
     
-    let	profileImageView: UIImageView = {
+    //needs to be lazy var so it can access "self"
+    lazy var profileImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectRestaurantImage)))
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -110,60 +113,6 @@ class LoginController: UIViewController, DataDelegate {
         setupLoginRegisterSegmentedControl()
         setupProfileImageView()
     }
-    
-    
-    func handleLoginRegister(){
-        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
-            handelLogin()
-        } else{
-            handleRegister()
-        }
-    }
-    
-    func handleRegister(){
-        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text
-            else {
-                print("invalid input")
-                return
-        }
-        self.data?.delegate = self
-        self.data?.userRegister(withEmail: email, andPassword: password, andDisplayName: name)
-    }
-    
-    func handelLogin(){
-        guard let email = emailTextField.text, let password = passwordTextField.text
-            else {
-                print("invalid input")
-                return
-        }
-        self.data?.delegate = self
-        self.data?.userLogin(withEmail: email, andPassword: password)
-        
-    }
-    
-    
-    
-    func handleLoginRegisterChange(){
-        let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
-        loginRegisternButton.setTitle(title, for: .normal)
-        inputsContainerViewHeigthAnchor?.constant = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 100 : 150
-        
-        nameTextFieldHeightAnchor?.isActive = false
-        nameTextFieldHeightAnchor? =  nameTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 0 : 1/3)
-        nameTextField.placeholder = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? "" : "Name"
-        nameTextFieldHeightAnchor?.isActive = true
-        
-        emailTextFieldHeightAnchor?.isActive = false
-        emailTextFieldHeightAnchor = emailTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
-        emailTextFieldHeightAnchor?.isActive = true
-        
-        passwordTextFieldHeightAnchor?.isActive = false
-        passwordTextFieldHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 1/2 : 1/3)
-        passwordTextFieldHeightAnchor?.isActive = true
-        
-    }
-    
-    
     
     func setupLoginRegisterSegmentedControl(){
         loginRegisterSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

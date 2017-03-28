@@ -83,6 +83,14 @@ class RestaurantCell: UICollectionViewCell, UICollectionViewDataSource,UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mealCellId, for: indexPath) as! MealCell
         cell.meal = (restaurant?.meals?[indexPath.item])!
+        cell.layer.transform = CATransform3DMakeScale(0.1,0.1,1)
+        UIView.animate(withDuration: 0.8, animations: {
+            cell.layer.transform = CATransform3DMakeScale(1.05,1.05,1)
+        },completion: { finished in
+            UIView.animate(withDuration: 0.5, animations: {
+                cell.layer.transform = CATransform3DMakeScale(1,1,1)
+            })
+        })
         return cell
     }
     

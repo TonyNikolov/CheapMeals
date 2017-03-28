@@ -19,6 +19,9 @@
 		EE07DA8C1E870B3000A2FABF /* Cheap_MealsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA8B1E870B3000A2FABF /* Cheap_MealsTests.swift */; };
 		EE07DA971E870B3000A2FABF /* Cheap_MealsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DA961E870B3000A2FABF /* Cheap_MealsUITests.swift */; };
 		EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07DAA51E87119400A2FABF /* LoginController.swift */; };
+		EE33A8A41E8A78FB00FA6DA7 /* LoginController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33A8A31E8A78FB00FA6DA7 /* LoginController+Handlers.swift */; };
+		EE33A8A61E8ABD2A00FA6DA7 /* AddMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */; };
+		EE33A8A81E8AC6B700FA6DA7 /* AddMealController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */; };
 		EE51A08B1E87BA6A008DC7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */; };
 		EE9307601E897864006232AB /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93075F1E897864006232AB /* RestaurantCell.swift */; };
 		EE9307621E898145006232AB /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9307611E898145006232AB /* MealCell.swift */; };
@@ -69,6 +72,9 @@
 		EE07DA961E870B3000A2FABF /* Cheap_MealsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cheap_MealsUITests.swift; sourceTree = "<group>"; };
 		EE07DA981E870B3000A2FABF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE07DAA51E87119400A2FABF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EE33A8A31E8A78FB00FA6DA7 /* LoginController+Handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginController+Handlers.swift"; sourceTree = "<group>"; };
+		EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealController.swift; sourceTree = "<group>"; };
+		EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddMealController+Handlers.swift"; sourceTree = "<group>"; };
 		EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EE93075F1E897864006232AB /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		EE9307611E898145006232AB /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 				EE9307661E89A9B9006232AB /* Views */,
 				EE07DAA51E87119400A2FABF /* LoginController.swift */,
 				EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */,
+				EE33A8A31E8A78FB00FA6DA7 /* LoginController+Handlers.swift */,
+				EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */,
+				EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -509,12 +518,15 @@
 				EE9307601E897864006232AB /* RestaurantCell.swift in Sources */,
 				EEAAD1301E883F5200388E83 /* Data.swift in Sources */,
 				EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */,
+				EE33A8A41E8A78FB00FA6DA7 /* LoginController+Handlers.swift in Sources */,
 				EE9307621E898145006232AB /* MealCell.swift in Sources */,
 				EE07DA761E870B3000A2FABF /* FeaturedMealsController.swift in Sources */,
 				EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */,
+				EE33A8A81E8AC6B700FA6DA7 /* AddMealController+Handlers.swift in Sources */,
 				EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */,
 				EE07DA741E870B3000A2FABF /* AppDelegate.swift in Sources */,
 				EE07DA7C1E870B3000A2FABF /* Cheap_Meals.xcdatamodeld in Sources */,
+				EE33A8A61E8ABD2A00FA6DA7 /* AddMealController.swift in Sources */,
 				EE9307641E89A817006232AB /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

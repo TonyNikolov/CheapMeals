@@ -16,16 +16,21 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        data?.getRestaurants()
         restaurants = Restaurant.dummyData()
         
         collectionView?.backgroundColor = UIColor(r: 219, g: 80, b: 84)
         collectionView?.register(RestaurantCell.self, forCellWithReuseIdentifier: cellId )
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        let logout = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+        let profile = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: nil)
+        let discover = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: nil)
+        let add = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(handleAddTapped))
+        navigationItem.rightBarButtonItems = [add,discover]
+        navigationItem.leftBarButtonItems = [logout,profile]
         
         
         if data?.isUserLoggedIn() == false {
-            perform(#selector(handleLogout), with: nil, afterDelay: 0) 
+            perform(#selector(handleLogout), with: nil, afterDelay: 0)
         }
     }
     
@@ -34,6 +39,11 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             return appDelegate.data
         }
+    }
+    
+    func handleAddTapped(){
+        let addMealController = AddMealController()
+        present(UINavigationController(rootViewController: addMealController), animated: true, completion: nil)
     }
     
     func handleLogout(){
@@ -59,6 +69,20 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! RestaurantCell
         cell.restaurant = restaurants?[indexPath.item]
+        //if you manage to beautify this, you win a gum "turbo"
+        UIView.animate(withDuration: 1.3,
+                       delay: 0.5,
+                       usingSpringWithDamping: 1,
+                       initialSpringVelocity: 5,
+                       options: [],
+                       animations: {
+                       cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                       },
+                       completion: {
+                       finished in
+                       UIView.animate(withDuration: 1.3, delay: 0.5, usingSpringWithDamping: 1, initialSpringVelocity: 5, options: .curveEaseInOut,
+                                      animations: {
+                                      cell.transform = CGAffineTransform(scaleX: 1, y: 1) }, completion: nil )})
         return cell
     }
     
