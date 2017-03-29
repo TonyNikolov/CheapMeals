@@ -23,6 +23,7 @@
 		EE33A8A61E8ABD2A00FA6DA7 /* AddMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */; };
 		EE33A8A81E8AC6B700FA6DA7 /* AddMealController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */; };
 		EE51A08B1E87BA6A008DC7E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */; };
+		EE88895A1E8C47160001E0AC /* MealDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8889591E8C47160001E0AC /* MealDetailController.swift */; };
 		EE9307601E897864006232AB /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93075F1E897864006232AB /* RestaurantCell.swift */; };
 		EE9307621E898145006232AB /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9307611E898145006232AB /* MealCell.swift */; };
 		EE9307641E89A817006232AB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9307631E89A817006232AB /* Models.swift */; };
@@ -77,6 +78,7 @@
 		EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMealController.swift; sourceTree = "<group>"; };
 		EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AddMealController+Handlers.swift"; sourceTree = "<group>"; };
 		EE51A08A1E87BA6A008DC7E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EE8889591E8C47160001E0AC /* MealDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailController.swift; sourceTree = "<group>"; };
 		EE93075F1E897864006232AB /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		EE9307611E898145006232AB /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		EE9307631E89A817006232AB /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -188,7 +190,6 @@
 		EE07DAA41E87116800A2FABF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EEAFFE2F1E8B0A5100C58BDD /* New Group */,
 				EE9307661E89A9B9006232AB /* Views */,
 				EE07DAA51E87119400A2FABF /* LoginController.swift */,
 				EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */,
@@ -196,6 +197,7 @@
 				EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */,
 				EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */,
 				EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */,
+				EE8889591E8C47160001E0AC /* MealDetailController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -225,13 +227,6 @@
 				EEAAD1331E88438100388E83 /* DataDelegate.swift */,
 			);
 			name = Data;
-			sourceTree = "<group>";
-		};
-		EEAFFE2F1E8B0A5100C58BDD /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		FEFC7B170137BF2D35070E1F /* Frameworks */ = {
@@ -531,6 +526,7 @@
 				EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */,
 				EE33A8A41E8A78FB00FA6DA7 /* LoginController+Handlers.swift in Sources */,
 				EE9307621E898145006232AB /* MealCell.swift in Sources */,
+				EE88895A1E8C47160001E0AC /* MealDetailController.swift in Sources */,
 				EE07DA761E870B3000A2FABF /* FeaturedMealsController.swift in Sources */,
 				EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */,
 				EE33A8A81E8AC6B700FA6DA7 /* AddMealController+Handlers.swift in Sources */,

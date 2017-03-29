@@ -18,7 +18,7 @@ class Data: DataProtocol {
     func getRestaurants() {
         let ref = FIRDatabase.database().reference().child("restaurants")
         ref.observe(.value, with: { snapshot in
-            print(snapshot.value!)
+            print("get restaurants value \(snapshot.value!)")
         })
         
     }
@@ -63,7 +63,8 @@ class Data: DataProtocol {
                     }
                     if let imgeUrl = metadata?.downloadURL()?.absoluteString {
                     let values = ["name": name, "email": email, "profileImageUrl": imgeUrl]
-                    self.registerUserIntoDb(uid: (user?.uid)!, values: values as [String : AnyObject])
+                    weak var weakSelf = self
+                    weakSelf?.registerUserIntoDb(uid: (user?.uid)!, values: values as [String : AnyObject])
                     }
                 })
             }

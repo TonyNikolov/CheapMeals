@@ -60,6 +60,14 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         present(loginController, animated: true, completion: nil)
     }
     
+    func showMealDetails(meal: Meal){
+        let layout = UICollectionViewFlowLayout()
+        let mealDetailController = MealDetailController(collectionViewLayout: layout)
+        mealDetailController.meal = meal
+        navigationController?.pushViewController(mealDetailController, animated: true)
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 200)
     }
@@ -75,9 +83,10 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! RestaurantCell
         cell.restaurant = restaurants?[indexPath.item]
+        cell.featuredMealsController = self
         //if you manage to beautify this, you win a gum "turbo"
-        UIView.animate(withDuration: 1.3,
-                       delay: 0.5,
+        UIView.animate(withDuration: 0.7,
+                       delay: 0,
                        usingSpringWithDamping: 1,
                        initialSpringVelocity: 5,
                        options: [],

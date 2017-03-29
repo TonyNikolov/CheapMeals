@@ -20,12 +20,12 @@ class Restaurant: NSObject {
         
         let kiuftaci = Meal()
         kiuftaci.name = "Kiuftaci"
-        kiuftaci.imageName = "dummyImage2"
+        kiuftaci.imageName = "dummyImage3"
         kiuftaci.price = NSNumber(floatLiteral: 0.99)
         
         let pleskavica = Meal()
         pleskavica.name = "Pleskavica"
-        pleskavica.imageName = "dummyImage2"
+        pleskavica.imageName = "dummyImage3"
         pleskavica.price = NSNumber(floatLiteral: 2.99)
 
         
@@ -40,12 +40,12 @@ class Restaurant: NSObject {
         
         let kiuftaci2 = Meal()
         kiuftaci2.name = "Kiuftaci"
-        kiuftaci2.imageName = "dummyImage2"
+        kiuftaci2.imageName = "dummyImage3"
         kiuftaci2.price = NSNumber(floatLiteral: 0.99)
         
         let pleskavica2 = Meal()
         pleskavica2.name = "Pleskavica"
-        pleskavica2.imageName = "dummyImage2"
+        pleskavica2.imageName = "dummyImage3"
         pleskavica2.price = NSNumber(floatLiteral: 2.99)
         
         

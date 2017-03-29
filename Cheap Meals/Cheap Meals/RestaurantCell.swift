@@ -9,6 +9,7 @@
 import UIKit
 
 class RestaurantCell: UICollectionViewCell, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    var featuredMealsController: FeaturedMealsController?
     private let mealCellId = "mealCellId"
     
     override init(frame: CGRect) {
@@ -70,6 +71,14 @@ class RestaurantCell: UICollectionViewCell, UICollectionViewDataSource,UICollect
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[nameLabel(30)][v0][v1(1)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["nameLabel": nameLabel,"v0":mealsCollectionView, "v1": dividerLineView]))
         
         dividerLineView.frame = CGRect(x: 0, y: 0, width: frame.width, height: 2)
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let meal: Meal = restaurant?.meals?[indexPath.item] {
+        featuredMealsController?.showMealDetails(meal: meal)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

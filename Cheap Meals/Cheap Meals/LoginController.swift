@@ -105,20 +105,20 @@ class LoginController: UIViewController, DataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(r: 218, g: 80, b: 84)
-        
-        func startActivityIndicatorView() -> UIActivityIndicatorView {
-            
-            let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-            activityView.frame = CGRect(x: 200, y: 120, width: 200, height: 200)
-            activityView.center = CGPoint(x: 100, y: 100)
-            activityView.color = .blue
-            activityView.startAnimating()
-            self.view.addSubview(activityView)
-            
-            return activityView
-        }
-        
-        startActivityIndicatorView()
+//        
+//        func startActivityIndicatorView() -> UIActivityIndicatorView {
+//            
+//            let activityView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+//            activityView.frame = CGRect(x: 200, y: 120, width: 200, height: 200)
+//            activityView.center = CGPoint(x: 100, y: 100)
+//            activityView.color = .blue
+//            activityView.startAnimating()
+//            self.view.addSubview(activityView)
+//            
+//            return activityView
+//        }
+//        
+//        startActivityIndicatorView()
 
  
         view.addSubview(inputContainerView)
