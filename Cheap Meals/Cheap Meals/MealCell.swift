@@ -8,15 +8,7 @@
 
 import UIKit
 
-class MealCell: UICollectionViewCell {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupCell()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+class MealCell: BaseCell {
     
     var meal: Meal? {
         didSet{
@@ -62,7 +54,7 @@ class MealCell: UICollectionViewCell {
         return priceLabel
     }()
     
-    func setupCell(){
+    override func setupCell(){
         addSubview(imageView)
         addSubview(nameLabel)
         addSubview(priceLabel)

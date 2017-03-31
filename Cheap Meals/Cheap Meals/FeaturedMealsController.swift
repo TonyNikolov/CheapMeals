@@ -48,8 +48,13 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
     }
     
     func handleEditTapped(){
-        let restaurantProfileController = RestaurantProfileController()
-        present(UINavigationController(rootViewController: restaurantProfileController), animated: true, completion: nil)
+//        if (data?.isUserLoggedIn()) != nil {
+//            let restaurant: Restaurant? = data?.getRestaurantById(uid: (data?.getLoggedInUserUID())!)
+//            //print(restaurant!)
+//            showRestaurantProfile(restaurant: restaurant!)
+//        } else {
+//            
+//        }
     }
     
     func handleLogout(){
@@ -66,6 +71,14 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         mealDetailController.meal = meal
         navigationController?.pushViewController(mealDetailController, animated: true)
         
+    }
+    
+    func showRestaurantProfile(restaurant: Restaurant){
+        let layout = UICollectionViewFlowLayout()
+        let restaurantProfileController = RestaurantProfileController(collectionViewLayout: layout)
+        restaurantProfileController.restaurant = restaurant
+        navigationController?.pushViewController(restaurantProfileController, animated: true)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

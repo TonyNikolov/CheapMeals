@@ -8,18 +8,9 @@
 
 import UIKit
 
-class RestaurantCell: UICollectionViewCell, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     var featuredMealsController: FeaturedMealsController?
     private let mealCellId = "mealCellId"
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupCell()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     var restaurant: Restaurant? {
         didSet{
@@ -55,7 +46,7 @@ class RestaurantCell: UICollectionViewCell, UICollectionViewDataSource,UICollect
         return view
     }()
     
-    func setupCell(){
+    override func setupCell(){
         backgroundColor = UIColor.clear
         addSubview(mealsCollectionView)
         addSubview(dividerLineView)

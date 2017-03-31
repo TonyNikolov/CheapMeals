@@ -13,9 +13,17 @@ protocol DataDelegate {
     func onFailedLogin()
     func onSuccessRegister()
     func onFailedRegister()
+    func onSuccessMealPush()
+    func onFailedMealPush(error: String)
 }
 
 extension DataDelegate {
+    func onSuccessMealPush(){
+        
+    }
+    func onFailedMealPush(error: String){
+        
+    }
     func onSuccessLogin(){
         
     }

@@ -10,7 +10,10 @@ import UIKit
 
 class Restaurant: NSObject {
     var name: String?
+    var profileImageUrl: String?
+    var email: String?
     var meals: [Meal]?
+    var mealsId: [String:String]?
     
     static func dummyData() -> [Restaurant] {
         let srubskSkara = Restaurant()
@@ -21,12 +24,12 @@ class Restaurant: NSObject {
         let kiuftaci = Meal()
         kiuftaci.name = "Kiuftaci"
         kiuftaci.imageName = "dummyImage3"
-        kiuftaci.price = NSNumber(floatLiteral: 0.99)
+        kiuftaci.price = "0.99"
         
         let pleskavica = Meal()
         pleskavica.name = "Pleskavica"
         pleskavica.imageName = "dummyImage3"
-        pleskavica.price = NSNumber(floatLiteral: 2.99)
+        pleskavica.price = "2.99"
 
         
         meals.append(kiuftaci)
@@ -41,12 +44,12 @@ class Restaurant: NSObject {
         let kiuftaci2 = Meal()
         kiuftaci2.name = "Kiuftaci"
         kiuftaci2.imageName = "dummyImage3"
-        kiuftaci2.price = NSNumber(floatLiteral: 0.99)
+        kiuftaci2.price = "0.99"
         
         let pleskavica2 = Meal()
         pleskavica2.name = "Pleskavica"
         pleskavica2.imageName = "dummyImage3"
-        pleskavica2.price = NSNumber(floatLiteral: 2.99)
+        pleskavica2.price = "2.99"
         
         
         meals2.append(kiuftaci)
@@ -61,5 +64,9 @@ class Meal: NSObject {
     var id: String?
     var name: String?
     var imageName: String?
-    var price: NSNumber?
+    var mealImageUrl: String?
+    var price: String?
+    var image: UIImage?
+    var weigth: String?
+    var restaurantUID: String?
 }

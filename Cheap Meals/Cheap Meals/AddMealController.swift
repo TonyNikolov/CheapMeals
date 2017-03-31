@@ -12,7 +12,9 @@ class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(r: 218, g: 80, b: 84)
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action:#selector(onBackTapped))
+        
         shortDescriptionTextField.delegate = self
         view.addSubview(inputContainerView)
         view.addSubview(publishMealButton)
@@ -22,11 +24,18 @@ class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
         setupPublishMealButton()
         setupGalleryCamereSegmentedControl()
         setupProfileImageView()
-
+        
     }
     
     func onBackTapped() {
         dismiss(animated: true, completion: nil )
+    }
+    
+    var data: Data? {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.data
+        }
     }
     
     let inputContainerView: UIView = {
@@ -50,12 +59,12 @@ class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
         button.layer.borderWidth = 1
         button.layer.masksToBounds = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handlePublishTapped)))
+        button.addTarget(self, action: #selector(handlePublishTapped), for: .touchUpInside)
+        
         
         return button
     }()
-
-
+    
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
@@ -106,7 +115,7 @@ class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
         let sc = UISegmentedControl(items: ["Image from Gallery", "Image from Camera"])
         sc.translatesAutoresizingMaskIntoConstraints = false
         sc.tintColor = UIColor.white
-        sc.selectedSegmentIndex = 1
+        sc.selectedSegmentIndex = 0
         return sc
     }()
     
@@ -121,17 +130,7 @@ class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
         return imageView
     }()
     
-    func handlePublishTapped(){
-        
-    }
-    
-    func collectInputData(){
-        
-    }
-    
-    func constructMealObject(){
-        
-    }
+
     
     func setupGalleryCamereSegmentedControl(){
         galleryCameraSegmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -141,7 +140,7 @@ class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
         
     }
     
-     
+    
     func setupPublishMealButton(){
         publishMealButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         publishMealButton.topAnchor.constraint(equalTo: inputContainerView.bottomAnchor, constant: 12).isActive=true
@@ -206,13 +205,22 @@ class AddMealController: UIViewController, UITextViewDelegate, DataDelegate {
         
         
     }
-
+    
     func setupProfileImageView(){
         mealImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mealImageView.bottomAnchor.constraint(equalTo: galleryCameraSegmentedControl.topAnchor, constant: -12).isActive = true
         mealImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
         mealImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
     }
+    
+    func onSuccessMealPush(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func onFailedMealPush(error: String){
+        self.showToast(message: error)
+    }
+    
     
     func textViewDidEndEditing(_ textView: UITextView)
     {

@@ -206,6 +206,10 @@ class LoginController: UIViewController, DataDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    func onFailedRegister(){
+        print("fail register")
+    }
+    
     func onSuccessLogin() {
         self.dismiss(animated: true, completion: nil)
     }
