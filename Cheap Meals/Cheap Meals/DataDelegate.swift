@@ -15,9 +15,15 @@ protocol DataDelegate {
     func onFailedRegister()
     func onSuccessMealPush()
     func onFailedMealPush(error: String)
+    func onSuccessRestaurantRecieved(restaurant: Restaurant)
+    func onFailedRestaurantRecieved()
+    func onSuccesMealRecieved(meal: Meal)
 }
 
 extension DataDelegate {
+    func onSuccesMealRecieved(meal: Meal){
+        
+    }
     func onSuccessMealPush(){
         
     }
@@ -34,6 +40,12 @@ extension DataDelegate {
         
     }
     func onFailedRegister(){
+        
+    }
+    func onSuccessRestaurantRecieved(restaurant: Restaurant){
+        
+    }
+    func onFailedRestaurantRecieved(){
         
     }
 }

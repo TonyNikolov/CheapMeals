@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class FeaturedMealsController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
+class FeaturedMealsController: UICollectionViewController, UICollectionViewDelegateFlowLayout, DataDelegate{
     
     private let cellId = "celId"
     var restaurants: [Restaurant]?
@@ -48,13 +48,13 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
     }
     
     func handleEditTapped(){
-//        if (data?.isUserLoggedIn()) != nil {
-//            let restaurant: Restaurant? = data?.getRestaurantById(uid: (data?.getLoggedInUserUID())!)
-//            //print(restaurant!)
-//            showRestaurantProfile(restaurant: restaurant!)
-//        } else {
-//            
-//        }
+        if (data?.isUserLoggedIn()) != nil {
+            self.data?.delegate = self
+            self.data?.getRestaurantById(uid: (data?.getLoggedInUserUID())!)
+        } else {
+            //load loginc screen
+            handleLogout()
+        }
     }
     
     func handleLogout(){
@@ -90,6 +90,10 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
             return count
         }
         return 0
+    }
+    
+    func onSuccessRestaurantRecieved (restaurant: Restaurant) {
+        showRestaurantProfile(restaurant: restaurant)
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

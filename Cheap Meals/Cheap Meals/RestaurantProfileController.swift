@@ -8,11 +8,14 @@
 
 import UIKit
 
-class RestaurantProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class RestaurantProfileController: UICollectionViewController, DataDelegate, UICollectionViewDelegateFlowLayout {
     private let headerId = "headerId"
-    
+    private var meals: [Meal]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.meals = [Meal]()
+        data?.delegate = self
+        data?.getMeals(mealsToFind: [String:String]())
         collectionView?.backgroundColor = UIColor(r: 218, g: 80, b: 84)
         collectionView?.register(RestaurantDetailHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView?.alwaysBounceVertical = true
@@ -24,6 +27,14 @@ class RestaurantProfileController: UICollectionViewController, UICollectionViewD
         }
     }
     
+    var data: Data? {
+        get{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            return appDelegate.data
+        }
+    }
+    
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! RestaurantDetailHeader
         header.restaurant = restaurant
@@ -32,6 +43,12 @@ class RestaurantProfileController: UICollectionViewController, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 200)
+    }
+    
+    func onSuccesMealRecieved(meal: Meal){
+        self.meals?.append(meal)
+        collectionView?.reloadData()
+        print("getting meals, getting money")
     }
 
 }

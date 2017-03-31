@@ -25,18 +25,42 @@ class Data: DataProtocol {
     
     
     func getRestaurantById(uid: String) {
-        let restaurant: Restaurant = Restaurant()
+        let restaurant1 = Restaurant()
         let result = FIRDatabase.database().reference(fromURL: "https://cheap-meals.firebaseio.com/restaurants/\(uid)")
-        result.description()
         result.observe(.value, with: { snap in
             if let dict = snap.value as? [String: AnyObject]{
-                restaurant.setValuesForKeys(dict)
+                restaurant1.setValuesForKeys(dict)
+                //print(restaurant.name)
+                self.delegate?.onSuccessRestaurantRecieved(restaurant: restaurant1)
                 
             }
         })
     }
     
-      func userLogin(withEmail email: String, andPassword password: String){
+    func getMeals(mealsToFind: [String:String]){
+        var mealsToFind = [String:String]()
+        let restaurantUID: String = getLoggedInUserUID()!
+        let result = FIRDatabase.database().reference().child("restaurants").child(restaurantUID).child("meals")
+        result.observe(.value, with: { snap in
+            if let dict = snap.value as? [String: AnyObject]{
+                mealsToFind = dict as! [String : String]
+                for mealToFind in mealsToFind {
+                    let res = FIRDatabase.database().reference().child("meals").child(mealToFind.value)
+                    res.observe(.value, with: { snap in
+                        if let dict = snap.value as? [String: AnyObject]{
+                            let meal = Meal()
+                            meal.setValuesForKeys(dict)
+                            self.delegate?.onSuccesMealRecieved(meal: meal)
+                        }
+                    })
+                }
+            }
+        })
+        
+    }
+    
+    
+    func userLogin(withEmail email: String, andPassword password: String){
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
             if error != nil{
                 print(error!)
@@ -116,7 +140,7 @@ class Data: DataProtocol {
         }
     }
     
-
+    
     func addMealToUser(userUID: String, mealUID: String){
         let userRef = FIRDatabase.database().reference().child("restaurants").child(userUID).child("meals")
         userRef.observe(.value, with: { snapshot in
@@ -126,7 +150,6 @@ class Data: DataProtocol {
                 meals?[mealUID] = mealUID
             }
             else {
-                print(snapshot)
                 meals = [String:String]()
                 meals?[mealUID] = mealUID
             }
