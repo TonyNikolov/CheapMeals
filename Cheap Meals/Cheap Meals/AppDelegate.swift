@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
 
         self.data = Data()
-        //so we can store images
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         let layout = UICollectionViewFlowLayout()

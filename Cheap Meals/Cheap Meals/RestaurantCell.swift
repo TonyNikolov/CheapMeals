@@ -9,7 +9,7 @@
 import UIKit
 
 class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
-    var featuredMealsController: FeaturedMealsController?
+    var featuredMealsController: UICollectionViewController?
     private let mealCellId = "mealCellId"
     
     var restaurant: Restaurant? {
@@ -17,6 +17,8 @@ class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDeleg
             if let name = restaurant?.name {
                 nameLabel.text = name
             }
+            
+            mealsCollectionView.reloadData()
         }
     }
     
@@ -46,6 +48,7 @@ class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDeleg
         return view
     }()
     
+    
     override func setupCell(){
         backgroundColor = UIColor.clear
         addSubview(mealsCollectionView)
@@ -64,8 +67,6 @@ class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDeleg
         dividerLineView.frame = CGRect(x: 0, y: 0, width: frame.width, height: 2)
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let meal: Meal = restaurant?.meals?[indexPath.item] {
         featuredMealsController?.showMealDetails(meal: meal)
@@ -79,6 +80,8 @@ class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDeleg
         
         return 0
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: mealCellId, for: indexPath) as! MealCell
@@ -98,4 +101,8 @@ class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDeleg
         return CGSize(width: 100, height: frame.height-32)
     }
     
+}
+
+extension Notification.Name {
+    static let reload = Notification.Name("reload")
 }

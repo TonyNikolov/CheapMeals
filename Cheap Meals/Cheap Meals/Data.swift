@@ -16,11 +16,28 @@ class Data: DataProtocol {
     var delegate: DataDelegate?
     
     func getRestaurants() {
-        let ref = FIRDatabase.database().reference().child("restaurants")
-        ref.observe(.value, with: { snapshot in
-            //  print("get restaurants value \(snapshot.value!)")
-        })
-        
+        DispatchQueue.global(qos: .background).async {
+            let ref = FIRDatabase.database().reference().child("restaurants")
+            ref.observe(.value, with: { snapshot in
+                if ( snapshot.childrenCount == 0 ) {
+                    print("not found")
+                } else {
+                    if let dict = snapshot.value as? [String: AnyObject]{
+                        let restaurants = dict
+                        for rest in restaurants {
+                            if let restDict = rest.value as? [String:AnyObject] {
+                                let restaurant1 = Restaurant()
+                                restaurant1.setValuesForKeys(restDict)
+                                restaurant1.meals = [Meal]()
+                                self.getMeals(forRestaurantUID: restaurant1.id!)
+                                self.delegate?.onRecieveRestaurants(restaurant: restaurant1)
+                            }
+                        }
+                    }
+                }
+            })
+        }
+
     }
     
     
@@ -30,6 +47,7 @@ class Data: DataProtocol {
         result.observe(.value, with: { snap in
             if let dict = snap.value as? [String: AnyObject]{
                 restaurant1.setValuesForKeys(dict)
+                restaurant1.meals = [Meal]()
                 //print(restaurant.name)
                 self.delegate?.onSuccessRestaurantRecieved(restaurant: restaurant1)
                 
@@ -37,10 +55,9 @@ class Data: DataProtocol {
         })
     }
     
-    func getMeals(mealsToFind: [String:String]){
+    func getMeals(forRestaurantUID: String){
         var mealsToFind = [String:String]()
-        let restaurantUID: String = getLoggedInUserUID()!
-        let result = FIRDatabase.database().reference().child("restaurants").child(restaurantUID).child("meals")
+        let result = FIRDatabase.database().reference().child("restaurants").child(forRestaurantUID).child("mealsId")
         result.observe(.value, with: { snap in
             if let dict = snap.value as? [String: AnyObject]{
                 mealsToFind = dict as! [String : String]
@@ -50,7 +67,8 @@ class Data: DataProtocol {
                         if let dict = snap.value as? [String: AnyObject]{
                             let meal = Meal()
                             meal.setValuesForKeys(dict)
-                            self.delegate?.onSuccesMealRecieved(meal: meal)
+                                    self.delegate?.onSuccesMealRecieved(meal: meal, forRestaurantUID: forRestaurantUID)
+                            
                         }
                     })
                 }
@@ -99,7 +117,7 @@ class Data: DataProtocol {
                         return
                     }
                     if let imgeUrl = metadata?.downloadURL()?.absoluteString {
-                        let values = ["name": name, "email": email, "profileImageUrl": imgeUrl]
+                        let values = ["id": user?.uid, "name": name, "email": email, "profileImageUrl": imgeUrl]
                         weak var weakSelf = self
                         weakSelf?.registerUserIntoDb(uid: (user?.uid)!, values: values as [String : AnyObject])
                     }
@@ -114,8 +132,8 @@ class Data: DataProtocol {
         if let restaurantUid = getLoggedInUserUID() {
             let imageName = NSUUID().uuidString
             let mealUID = NSUUID().uuidString
-            let storageRef = FIRStorage.storage().reference().child("\(imageName).png")
-            if let uploadData = UIImagePNGRepresentation(meal.image!) {
+            let storageRef = FIRStorage.storage().reference().child("\(imageName).jpg")
+            if let _ = meal.image, let uploadData = UIImageJPEGRepresentation(meal.image!, 0.2) {
                 storageRef.put(uploadData, metadata: nil, completion: { (metadata, error) in
                     if error != nil{
                         print(error!)
@@ -142,7 +160,7 @@ class Data: DataProtocol {
     
     
     func addMealToUser(userUID: String, mealUID: String){
-        let userRef = FIRDatabase.database().reference().child("restaurants").child(userUID).child("meals")
+        let userRef = FIRDatabase.database().reference().child("restaurants").child(userUID).child("mealsId")
         userRef.observe(.value, with: { snapshot in
             var meals: Dictionary<String,String>?
             if snapshot.exists(){

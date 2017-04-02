@@ -9,6 +9,7 @@
 import UIKit
 
 class Restaurant: NSObject {
+    var id: String?
     var name: String?
     var profileImageUrl: String?
     var email: String?

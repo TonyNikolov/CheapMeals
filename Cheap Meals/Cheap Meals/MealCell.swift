@@ -9,7 +9,7 @@
 import UIKit
 
 class MealCell: BaseCell {
-    
+ 
     var meal: Meal? {
         didSet{
             if let name = meal?.name {
@@ -22,17 +22,18 @@ class MealCell: BaseCell {
                 priceLabel.text = "Free"
             }
             
-            if let imageName = meal?.imageName {
-                imageView.image = UIImage(named: imageName)
+            if (meal?.imageName) != nil {
+                imageView.loadImageUsingCacheWithUrlString(urlString: (meal?.mealImageUrl)!)
             }
         }
     }
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-   //     imageView.image = UIImage(named: "dummyImage2")
-        imageView.contentMode = .scaleAspectFill
+        imageView.image = UIImage(named: "dummyImage2")
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.cornerRadius = 12
+        imageView.backgroundColor = UIColor.white
         imageView.layer.masksToBounds = true
         return imageView
     }()
@@ -40,7 +41,8 @@ class MealCell: BaseCell {
     let nameLabel: UILabel = {
         let nameLabel = UILabel()
         nameLabel.text = "Kiuftaci"
-        nameLabel.font = UIFont.systemFont(ofSize: 15)
+        nameLabel.textColor = UIColor.white
+        nameLabel.font = UIFont.systemFont(ofSize: 18)
         nameLabel.numberOfLines = 2
         return nameLabel
     }()
@@ -48,8 +50,8 @@ class MealCell: BaseCell {
     let priceLabel: UILabel = {
         let priceLabel = UILabel()
         priceLabel.text = "0.99 BGN"
-        priceLabel.textColor = UIColor.white
-        priceLabel.font = UIFont.systemFont(ofSize: 13)
+        priceLabel.textColor = UIColor.green
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 16)
         priceLabel.numberOfLines = 1
         return priceLabel
     }()

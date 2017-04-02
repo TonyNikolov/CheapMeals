@@ -17,11 +17,15 @@ protocol DataDelegate {
     func onFailedMealPush(error: String)
     func onSuccessRestaurantRecieved(restaurant: Restaurant)
     func onFailedRestaurantRecieved()
-    func onSuccesMealRecieved(meal: Meal)
+    func onSuccesMealRecieved(meal: Meal, forRestaurantUID: String)
+    func onRecieveRestaurants(restaurant: Restaurant)
 }
 
 extension DataDelegate {
-    func onSuccesMealRecieved(meal: Meal){
+    func onRecieveRestaurants(restaurant: Restaurant){
+        
+    }
+    func onSuccesMealRecieved(meal: Meal, forRestaurantUID: String){
         
     }
     func onSuccessMealPush(){

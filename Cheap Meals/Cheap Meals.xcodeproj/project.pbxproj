@@ -29,6 +29,8 @@
 		EE9307601E897864006232AB /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE93075F1E897864006232AB /* RestaurantCell.swift */; };
 		EE9307621E898145006232AB /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9307611E898145006232AB /* MealCell.swift */; };
 		EE9307641E89A817006232AB /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9307631E89A817006232AB /* Models.swift */; };
+		EE9DC0481E8FBF6700351AE7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9DC0471E8FBF6700351AE7 /* CollectionViewController.swift */; };
+		EEA49C181E9022500079EF1D /* UIImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA49C171E9022500079EF1D /* UIImageCache.swift */; };
 		EEAAD1301E883F5200388E83 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD12F1E883F5200388E83 /* Data.swift */; };
 		EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1311E883FAF00388E83 /* DataProtocol.swift */; };
 		EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAAD1331E88438100388E83 /* DataDelegate.swift */; };
@@ -88,6 +90,8 @@
 		EE93075F1E897864006232AB /* RestaurantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		EE9307611E898145006232AB /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		EE9307631E89A817006232AB /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		EE9DC0471E8FBF6700351AE7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		EEA49C171E9022500079EF1D /* UIImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageCache.swift; sourceTree = "<group>"; };
 		EEAAD12F1E883F5200388E83 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		EEAAD1311E883FAF00388E83 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
 		EEAAD1331E88438100388E83 /* DataDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDelegate.swift; sourceTree = "<group>"; };
@@ -199,12 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9307661E89A9B9006232AB /* Views */,
-				EE07DAA51E87119400A2FABF /* LoginController.swift */,
 				EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */,
-				EE33A8A31E8A78FB00FA6DA7 /* LoginController+Handlers.swift */,
-				EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */,
-				EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */,
-				EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */,
 				EE8889591E8C47160001E0AC /* MealDetailController.swift */,
 			);
 			name = Controllers;
@@ -221,13 +220,60 @@
 		EE9307661E89A9B9006232AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EE9307611E898145006232AB /* MealCell.swift */,
-				EE93075F1E897864006232AB /* RestaurantCell.swift */,
-				EEC5498E1E8D2A3300B5198D /* BaseCell.swift */,
-				EEC549901E8D2AA300B5198D /* UIViewExtensions.swift */,
-				EE797D111E8E6B8100E2E33C /* Toast.swift */,
+				EE9DC0451E8FB7ED00351AE7 /* RestaurantProfile */,
+				EE9DC03F1E8FB0A800351AE7 /* LoginViewController */,
+				EE9DC03E1E8FB08800351AE7 /* AddMealViewController */,
+				EE9DC03D1E8FAFFD00351AE7 /* CustomViews */,
+				EE9DC03C1E8FAFEB00351AE7 /* ViewHelpers */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		EE9DC03C1E8FAFEB00351AE7 /* ViewHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				EE9DC0471E8FBF6700351AE7 /* CollectionViewController.swift */,
+				EEC549901E8D2AA300B5198D /* UIViewExtensions.swift */,
+				EE797D111E8E6B8100E2E33C /* Toast.swift */,
+				EEA49C171E9022500079EF1D /* UIImageCache.swift */,
+			);
+			name = ViewHelpers;
+			sourceTree = "<group>";
+		};
+		EE9DC03D1E8FAFFD00351AE7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				EEC5498E1E8D2A3300B5198D /* BaseCell.swift */,
+				EE9307611E898145006232AB /* MealCell.swift */,
+				EE93075F1E897864006232AB /* RestaurantCell.swift */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		EE9DC03E1E8FB08800351AE7 /* AddMealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE33A8A71E8AC6B700FA6DA7 /* AddMealController+Handlers.swift */,
+				EE33A8A51E8ABD2A00FA6DA7 /* AddMealController.swift */,
+			);
+			name = AddMealViewController;
+			sourceTree = "<group>";
+		};
+		EE9DC03F1E8FB0A800351AE7 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE33A8A31E8A78FB00FA6DA7 /* LoginController+Handlers.swift */,
+				EE07DAA51E87119400A2FABF /* LoginController.swift */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		EE9DC0451E8FB7ED00351AE7 /* RestaurantProfile */ = {
+			isa = PBXGroup;
+			children = (
+				EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */,
+			);
+			name = RestaurantProfile;
 			sourceTree = "<group>";
 		};
 		EEAAD12E1E883F3100388E83 /* Data */ = {
@@ -535,12 +581,14 @@
 			files = (
 				EE9307601E897864006232AB /* RestaurantCell.swift in Sources */,
 				EEAAD1301E883F5200388E83 /* Data.swift in Sources */,
+				EEA49C181E9022500079EF1D /* UIImageCache.swift in Sources */,
 				EEAAD1321E883FAF00388E83 /* DataProtocol.swift in Sources */,
 				EE33A8A41E8A78FB00FA6DA7 /* LoginController+Handlers.swift in Sources */,
 				EE9307621E898145006232AB /* MealCell.swift in Sources */,
 				EE88895A1E8C47160001E0AC /* MealDetailController.swift in Sources */,
 				EE07DA761E870B3000A2FABF /* FeaturedMealsController.swift in Sources */,
 				EE07DAA61E87119400A2FABF /* LoginController.swift in Sources */,
+				EE9DC0481E8FBF6700351AE7 /* CollectionViewController.swift in Sources */,
 				EE33A8A81E8AC6B700FA6DA7 /* AddMealController+Handlers.swift in Sources */,
 				EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */,
 				EEC5498F1E8D2A3300B5198D /* BaseCell.swift in Sources */,

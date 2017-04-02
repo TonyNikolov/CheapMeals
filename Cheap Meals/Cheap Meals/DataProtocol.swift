@@ -13,5 +13,5 @@ protocol DataProtocol {
     func userLogout()
     func userRegister(withEmail email: String, andPassword password: String, andDisplayName name: String)
     func userRegister(withEmail email: String, andPassword password: String, andDisplayName name: String, andProfileImage image: UIImage)
-    func getRestaurants()
+
     }

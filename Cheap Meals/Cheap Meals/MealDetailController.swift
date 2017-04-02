@@ -22,7 +22,10 @@ class MealDetailController: UICollectionViewController, UICollectionViewDelegate
     var meal: Meal? {
         didSet {
             navigationItem.title = meal?.name
+            
         }
+        
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -54,6 +57,11 @@ class MealDetailHeader: BaseCell {
             } else {
                 priceLabel.text = "Free"
             }
+            
+            if (meal?.imageName) != nil {
+                imageView.loadImageUsingCacheWithUrlString(urlString: (meal?.mealImageUrl)!)
+            }
+
         }
     }
     
@@ -80,11 +88,10 @@ class MealDetailHeader: BaseCell {
     
     let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 15
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIColor.blue
         return imageView
     }()
     
