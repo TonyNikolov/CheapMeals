@@ -29,7 +29,17 @@ class RestaurantProfileController: UIViewController, DataDelegate {
     func onSuccesMealRecieved(meal: Meal, forRestaurantUID: String){
         DispatchQueue.global(qos: .background).async {
             // Background Thread
-            self.restaurant?.meals?.append(meal)
+            if (self.restaurant?.meals?.count)! > 0 {
+                //
+                for meal1 in (self.restaurant?.meals)!{
+                    if (meal1.id != meal.id){
+                        self.restaurant?.meals?.append(meal)
+                        break
+                    }
+                }
+            } else {
+                self.restaurant?.meals?.append(meal)
+            }
             DispatchQueue.main.async {
                 self.mealsCollectionView.reloadData()
             }
@@ -101,7 +111,7 @@ class RestaurantProfileController: UIViewController, DataDelegate {
         tf.backgroundColor = UIColor.white
         tf.layer.cornerRadius = 10
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.backgroundColor = UIColor(r: 218, g: 80, b: 84)
+        tf.backgroundColor = UIColor.white
         tf.font = UIFont.systemFont(ofSize: 18)
         return tf
     }()
@@ -139,6 +149,7 @@ class RestaurantProfileController: UIViewController, DataDelegate {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.layer.cornerRadius = 16
+        collectionView.backgroundColor = UIColor(r: 219, g: 80, b: 84)
         collectionView.layer.borderColor = UIColor.white.cgColor
         collectionView.contentInset =  UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         return collectionView
@@ -175,7 +186,7 @@ class RestaurantProfileController: UIViewController, DataDelegate {
             let value = detailsTextField.text!
             data?.updateRestaurantInfo(uid: uid!, field: field, value: value)
         }
-
+        
     }
     
     func handleSegmentedControlChange() {
@@ -232,7 +243,7 @@ class RestaurantProfileController: UIViewController, DataDelegate {
         
         mealsCollectionView.dataSource = self
         mealsCollectionView.delegate = self
-//        mealsCollectionView.frame = CGRect(x: 100, y: 200, width: 400, height: 220)
+        //        mealsCollectionView.frame = CGRect(x: 100, y: 200, width: 400, height: 220)
         mealsCollectionView.register(RestaurantCell.self, forCellWithReuseIdentifier: restaurantCellId)
         
     }
@@ -260,7 +271,7 @@ class RestaurantProfileController: UIViewController, DataDelegate {
         showToast(message: message)
     }
     
-
+    
 }
 
 extension RestaurantProfileController: UICollectionViewDataSource {

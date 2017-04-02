@@ -154,6 +154,7 @@ class Data {
                     if let imgeUrl = metadata?.downloadURL()?.absoluteString {
                         let values = [
                             "id": mealUID,
+                            "details": meal.details!,
                             "name": meal.name!,
                             "imageName": imageName,
                             "mealImageUrl": imgeUrl,

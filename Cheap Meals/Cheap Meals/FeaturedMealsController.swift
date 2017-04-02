@@ -24,9 +24,8 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         collectionView?.register(RestaurantCell.self, forCellWithReuseIdentifier: cellId )
         let logout = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         let profile = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.edit, target: self, action: #selector(handleEditTapped))
-        let discover = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.search, target: self, action: nil)
         let add = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(handleAddTapped))
-        navigationItem.rightBarButtonItems = [add,discover]
+        navigationItem.rightBarButtonItems = [add]
         navigationItem.leftBarButtonItems = [logout,profile]
         
         if data?.isUserLoggedIn() == false {

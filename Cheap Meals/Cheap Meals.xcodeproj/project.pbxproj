@@ -201,10 +201,24 @@
 			isa = PBXGroup;
 			children = (
 				EE9307661E89A9B9006232AB /* Views */,
-				EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */,
-				EE8889591E8C47160001E0AC /* MealDetailController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EE3BB9E41E917918006EEE59 /* MealDetailController */ = {
+			isa = PBXGroup;
+			children = (
+				EE8889591E8C47160001E0AC /* MealDetailController.swift */,
+			);
+			name = MealDetailController;
+			sourceTree = "<group>";
+		};
+		EE3BB9E51E917931006EEE59 /* FeaturedMealsController */ = {
+			isa = PBXGroup;
+			children = (
+				EE07DA751E870B3000A2FABF /* FeaturedMealsController.swift */,
+			);
+			name = FeaturedMealsController;
 			sourceTree = "<group>";
 		};
 		EE9307651E89A9AA006232AB /* Models */ = {
@@ -218,6 +232,8 @@
 		EE9307661E89A9B9006232AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EE3BB9E51E917931006EEE59 /* FeaturedMealsController */,
+				EE3BB9E41E917918006EEE59 /* MealDetailController */,
 				EE9DC0451E8FB7ED00351AE7 /* RestaurantProfile */,
 				EE9DC03F1E8FB0A800351AE7 /* LoginViewController */,
 				EE9DC03E1E8FB08800351AE7 /* AddMealViewController */,

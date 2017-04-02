@@ -66,6 +66,7 @@ class Restaurant: NSObject {
 class Meal: NSObject {
     var id: String?
     var name: String?
+    var details: String?
     var imageName: String?
     var mealImageUrl: String?
     var price: String?

@@ -52,6 +52,7 @@ extension AddMealController: UIImagePickerControllerDelegate, UINavigationContro
         meal.image = mealImageView.image!
         meal.price = priceTextField.text!
         meal.weigth = weigthTextField.text!
+        meal.details = shortDescriptionTextField.text!
         return meal
     }
     
