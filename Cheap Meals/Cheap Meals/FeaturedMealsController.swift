@@ -113,7 +113,8 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let rest: Restaurant = restaurants?[indexPath.item] {
-            self.showRestaurantProfile(restaurant: rest)
+            self.data?.delegate = self
+            self.data?.getRestaurantById(uid: rest.id!)
         }
     }
     
