@@ -19,9 +19,17 @@ protocol DataDelegate {
     func onFailedRestaurantRecieved()
     func onSuccesMealRecieved(meal: Meal, forRestaurantUID: String)
     func onRecieveRestaurants(restaurant: Restaurant)
+    func onFailedValueUpdated(message: String)
+    func onSuccessValueUpdated(message: String)
 }
 
 extension DataDelegate {
+    func onSuccessValueUpdated(message: String){
+        
+    }
+    func onFailedValueUpdated(message: String){
+        
+    }
     func onRecieveRestaurants(restaurant: Restaurant){
         
     }

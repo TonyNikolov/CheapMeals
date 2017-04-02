@@ -47,6 +47,17 @@ class RestaurantProfileController: UIViewController, DataDelegate {
                 imageView.loadImageUsingCacheWithUrlString(urlString: (restaurant?.profileImageUrl)!)
             }
             
+            if let details = restaurant?.details {
+                if !details.isEmpty {
+                    detailsTextField.text = details
+                }
+            }
+            
+            if let address = restaurant?.location {
+                if !address.isEmpty {
+                    addressTextField.text = address
+                }
+            }
             
             
         }
@@ -83,25 +94,28 @@ class RestaurantProfileController: UIViewController, DataDelegate {
         return sc
     }()
     
-    let addressTextField: UITextField = {
-        let tf = UITextField()
-        tf.textColor = UIColor.white
+    let addressTextField: UITextView = {
+        let tf = UITextView()
         tf.isHidden = true
-        tf.placeholder = "Your address location"
+        tf.text = "Your address location"
+        tf.backgroundColor = UIColor.white
+        tf.layer.cornerRadius = 10
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.backgroundColor = UIColor(r: 218, g: 80, b: 84)
+        tf.font = UIFont.systemFont(ofSize: 18)
         return tf
     }()
     
-    let detailsTextField: UITextField = {
-        let tf = UITextField()
-        tf.textColor = UIColor.white
+    let detailsTextField: UITextView = {
+        let tf = UITextView()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.text = "Short description"
+        tf.layer.cornerRadius = 10
+        tf.backgroundColor = UIColor.white
         tf.font = UIFont.systemFont(ofSize: 18)
         tf.isHidden = true
-        tf.placeholder = "Some details for your establishment"
-        tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
-    
     let updateButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 219, g: 80, b: 84)
@@ -113,7 +127,7 @@ class RestaurantProfileController: UIViewController, DataDelegate {
         button.layer.borderWidth = 1
         button.layer.masksToBounds = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.addTarget(self, action: #selector(handleUpdateAddress), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleUpdateButtonTapped), for: .touchUpInside)
         
         return button
     }()
@@ -140,11 +154,28 @@ class RestaurantProfileController: UIViewController, DataDelegate {
     }
     
     func setupPermissions(){
+        if (data?.getLoggedInUserUID() != restaurant?.id){
+            updateButton.isHidden = true
+            addressTextField.isUserInteractionEnabled = false
+            detailsTextField.isUserInteractionEnabled = false
+        }
         
     }
     
-    func handleUpdateAddress() {
-        
+    func handleUpdateButtonTapped() {
+        let title = segmentedControll.titleForSegment(at: segmentedControll.selectedSegmentIndex)
+        if(title == "Location"){
+            let uid = restaurant?.id
+            let field = "location"
+            let value = addressTextField.text!
+            data?.updateRestaurantInfo(uid: uid!, field: field, value: value)
+        } else if (title == "Details") {
+            let uid = restaurant?.id
+            let field = "details"
+            let value = detailsTextField.text!
+            data?.updateRestaurantInfo(uid: uid!, field: field, value: value)
+        }
+
     }
     
     func handleSegmentedControlChange() {
@@ -208,19 +239,28 @@ class RestaurantProfileController: UIViewController, DataDelegate {
     
     func setupUpdateAddressButton(){
         view.addConstraintsWithFormat(format: "H:|-40-[v0]-40-|", views: updateButton)
-        view.addConstraintsWithFormat(format: "V:|-300-[v0]", views: updateButton)
+        view.addConstraintsWithFormat(format: "V:|-320-[v0]", views: updateButton)
         
     }
     
     func setupAddressTextField(){
-        view.addConstraintsWithFormat(format: "H:|-40-[v0]-40-|", views: addressTextField)
-        view.addConstraintsWithFormat(format: "V:[v0]-10-[v1]", views: segmentedControll, addressTextField)
+        view.addConstraintsWithFormat(format: "H:|-40-[v0(\(view.frame.width-80))]-40-|", views: addressTextField)
+        view.addConstraintsWithFormat(format: "V:[v0]-10-[v1(70)]", views: segmentedControll, addressTextField)
     }
     
     func setupDetailsTextField(){
-        view.addConstraintsWithFormat(format: "H:|-40-[v0]-40-|", views: detailsTextField)
-        view.addConstraintsWithFormat(format: "V:[v0]-10-[v1]", views: segmentedControll, detailsTextField)
+        view.addConstraintsWithFormat(format: "H:|-40-[v0(\(view.frame.width-80))]-40-|", views: detailsTextField)
+        view.addConstraintsWithFormat(format: "V:[v0]-10-[v1(70)]", views: segmentedControll, detailsTextField)
     }
+    
+    func onFailedValueUpdated(message: String){
+        showToast(message: message)
+    }
+    func onSuccessValueUpdated(message: String){
+        showToast(message: message)
+    }
+    
+
 }
 
 extension RestaurantProfileController: UICollectionViewDataSource {
@@ -255,5 +295,22 @@ extension RestaurantProfileController: UICollectionViewDataSource {
 extension RestaurantProfileController: UICollectionViewDelegateFlowLayout  {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 200)
+    }
+}
+
+extension RestaurantProfileController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if textView.text.isEmpty {
+            textView.text = "Short description"
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
     }
 }

@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
-class Data: DataProtocol {
+class Data {
     
     var delegate: DataDelegate?
     
@@ -36,6 +36,18 @@ class Data: DataProtocol {
                     }
                 }
             })
+        }
+
+    }
+    
+    func updateRestaurantInfo(uid: String, field: String, value: String){
+        let result = FIRDatabase.database().reference(fromURL: "https://cheap-meals.firebaseio.com/restaurants/\(uid)").child(field)
+        result.setValue(value) { (error, ref) in
+            if error != nil{
+                self.delegate?.onFailedValueUpdated(message: error.debugDescription)
+            } else {
+                self.delegate?.onSuccessValueUpdated(message: "\(field) updated successfully")
+            }
         }
 
     }

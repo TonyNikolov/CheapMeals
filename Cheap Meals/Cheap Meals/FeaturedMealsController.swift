@@ -78,12 +78,6 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         present(UINavigationController(rootViewController: addMealController), animated: true, completion: nil)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        }
-    }
-    
     func handleEditTapped(){
         if (data?.isUserLoggedIn()) != nil {
             self.data?.delegate = self

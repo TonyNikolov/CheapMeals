@@ -11,6 +11,8 @@ import UIKit
 class Restaurant: NSObject {
     var id: String?
     var name: String?
+    var details: String?
+    var location: String?
     var profileImageUrl: String?
     var email: String?
     var meals: [Meal]?
