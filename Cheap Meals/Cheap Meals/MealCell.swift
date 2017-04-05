@@ -43,6 +43,7 @@ class MealCell: BaseCell {
         nameLabel.text = "Kiuftaci"
         nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont.systemFont(ofSize: 18)
+        nameLabel.font = UIFont.
         nameLabel.numberOfLines = 2
         return nameLabel
     }()

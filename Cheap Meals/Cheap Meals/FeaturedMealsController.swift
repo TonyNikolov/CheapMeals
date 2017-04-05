@@ -16,7 +16,6 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        data?.delegate = self
         restaurants = [Restaurant]()
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -28,18 +27,23 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         navigationItem.rightBarButtonItems = [add]
         navigationItem.leftBarButtonItems = [logout,profile]
         
-        if data?.isUserLoggedIn() == false {
-            perform(#selector(handleLogout), with: nil, afterDelay: 0)
-        } else {
-            data?.getRestaurants()
-        }
-    }
+            }
     
     var data: Data? {
         get{
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             return appDelegate.data
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if data?.isUserLoggedIn() == false {
+            perform(#selector(handleLogout), with: nil, afterDelay: 0)
+        } else {
+            data?.delegate = self
+            data?.getRestaurants()
+        }
+
     }
     
     func onRecieveRestaurants(restaurant: Restaurant){

@@ -36,6 +36,7 @@
 		EEAFFE311E8B0A6800C58BDD /* RestaurantProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */; };
 		EEC5498F1E8D2A3300B5198D /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC5498E1E8D2A3300B5198D /* BaseCell.swift */; };
 		EEC549911E8D2AA300B5198D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC549901E8D2AA300B5198D /* UIViewExtensions.swift */; };
+		EEE472961E952E7A00B7C40A /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE472951E952E7A00B7C40A /* UILabelExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		EEAFFE301E8B0A6800C58BDD /* RestaurantProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantProfileController.swift; sourceTree = "<group>"; };
 		EEC5498E1E8D2A3300B5198D /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		EEC549901E8D2AA300B5198D /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		EEE472951E952E7A00B7C40A /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		F3179D272B848E8C7975EEF2 /* Pods-Cheap MealsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cheap MealsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cheap MealsUITests/Pods-Cheap MealsUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,6 +252,7 @@
 				EEC549901E8D2AA300B5198D /* UIViewExtensions.swift */,
 				EE797D111E8E6B8100E2E33C /* Toast.swift */,
 				EEA49C171E9022500079EF1D /* UIImageCache.swift */,
+				EEE472951E952E7A00B7C40A /* UILabelExtensions.swift */,
 			);
 			name = ViewHelpers;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				EE9DC0481E8FBF6700351AE7 /* CollectionViewController.swift in Sources */,
 				EE33A8A81E8AC6B700FA6DA7 /* AddMealController+Handlers.swift in Sources */,
 				EEAAD1341E88438100388E83 /* DataDelegate.swift in Sources */,
+				EEE472961E952E7A00B7C40A /* UILabelExtensions.swift in Sources */,
 				EEC5498F1E8D2A3300B5198D /* BaseCell.swift in Sources */,
 				EE07DA741E870B3000A2FABF /* AppDelegate.swift in Sources */,
 				EEAFFE311E8B0A6800C58BDD /* RestaurantProfileController.swift in Sources */,

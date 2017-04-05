@@ -22,8 +22,8 @@ class RestaurantCell: BaseCell, UICollectionViewDataSource,UICollectionViewDeleg
         }
     }
     
-    let nameLabel: UILabel = {
-        let nameLabel = UILabel()
+    let nameLabel: UIUnderlinedLabel = {
+        let nameLabel = UIUnderlinedLabel()
         nameLabel.text = "Srubska skara"
         nameLabel.textColor = UIColor.white
         nameLabel.font = UIFont.boldSystemFont(ofSize: 16)
