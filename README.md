@@ -6,7 +6,7 @@ CheapMeals is application created for IOS, written on Swift. Food business that 
 
 CheapMeals is using UIImage memory cache and compression to reduce network traffic heavily.
 
-<img src="http://imgur.com/a/mXBte" width="200" height="350" />
+<img src="http://i.imgur.com/agjovE7g.png" width="200" height="350" />
 <img src="http://i.imgur.com/9F0Kr6b.png" width="200" height="350" />
 <img src="http://i.imgur.com/5a1CVsA.png" width="200" height="350" />
 <img src="http://i.imgur.com/C4taCje.png" width="200" height="350" />
