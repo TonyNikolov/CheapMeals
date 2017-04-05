@@ -12,6 +12,7 @@ import FirebaseAuth
 class FeaturedMealsController: UICollectionViewController, UICollectionViewDelegateFlowLayout, DataDelegate{
     
     private let cellId = "celId"
+    private var isUpdated = false
     var restaurants: [Restaurant]?
     
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
         navigationItem.rightBarButtonItems = [add]
         navigationItem.leftBarButtonItems = [logout,profile]
         
-            }
+    }
     
     var data: Data? {
         get{
@@ -43,37 +44,39 @@ class FeaturedMealsController: UICollectionViewController, UICollectionViewDeleg
             data?.delegate = self
             data?.getRestaurants()
         }
-
+        
     }
     
     func onRecieveRestaurants(restaurant: Restaurant){
-        if (self.restaurants?.contains(restaurant))!{
-            
-        } else{
+        if !(self.restaurants?.contains(where: { $0 == restaurant }))! {
             self.restaurants?.append(restaurant)
+            isUpdated = true
         }
-        DispatchQueue.main.async {
-            // Run UI Updates
-            self.collectionView?.reloadData()
+        if isUpdated {
+            DispatchQueue.main.async {
+                // Run UI Updates
+                self.collectionView?.reloadData()
+                self.isUpdated = false
+            }
         }
-        
     }
     
     func onSuccesMealRecieved(meal: Meal, forRestaurantUID: String){
         for res in self.restaurants! {
             if res.id == forRestaurantUID {
-                if(res.meals?.contains(meal))!{
-                    
-                } else {
+                if !(res.meals?.contains(where: { $0 == meal }))! {
                     res.meals?.append(meal)
-                }
-                break
+                    isUpdated = true
+                    
+                }}
+        }
+        if isUpdated {
+            DispatchQueue.main.async {
+                // Run UI Updates
+                self.collectionView?.reloadData()
+                self.isUpdated = false
             }
         }
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        }
-        
     }
     
     func handleAddTapped(){
